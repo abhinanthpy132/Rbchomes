@@ -93,17 +93,28 @@ const newHeroTitle = document.querySelector('.luxury-hero-title');
 const newHeroRightBlock = document.querySelector('.luxury-hero-right');
 
 if (newHeroSection) {
-  // 1. Initial entry fade & zoom on page load
-  gsap.fromTo(newHeroBg,
-    { scale: 1.1, opacity: 0 },
-    { scale: 1.0, opacity: 1, duration: 2.2, ease: 'power2.out' }
-  );
+  // 1. Initial entry fade & zoom on page load (deferred if preloader exists)
+  const triggerEntrance = () => {
+    if (newHeroBg) {
+      gsap.fromTo(newHeroBg,
+        { scale: 1.1, opacity: 0 },
+        { scale: 1.0, opacity: 1, duration: 2.2, ease: 'power2.out' }
+      );
+    }
 
-  // Stagger entry of typography elements
-  gsap.fromTo([newHeroTitle, newHeroRightBlock],
-    { y: 40, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1.6, stagger: 0.25, ease: 'power3.out', delay: 0.5 }
-  );
+    if (newHeroTitle || newHeroRightBlock) {
+      gsap.fromTo([newHeroTitle, newHeroRightBlock].filter(Boolean),
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.6, stagger: 0.25, ease: 'power3.out', delay: 0.2 }
+      );
+    }
+  };
+
+  if (document.getElementById('preloader')) {
+    window.addEventListener('preloaderComplete', triggerEntrance);
+  } else {
+    triggerEntrance();
+  }
 
   // 2. Scroll-scrub parallax timeline
   const newHeroTl = gsap.timeline({
