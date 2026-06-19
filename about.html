@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     
     <!-- Compiled CSS Stylesheet -->
     <link rel="stylesheet" href="style.css" />
@@ -407,6 +407,54 @@
         0%, 100% { opacity: 0.35; transform: scale(0.97); }
         50% { opacity: 1; transform: scale(1.03); }
       }
+      
+      /* Premium Redesign Custom Classes */
+      .luxury-card {
+        background: #ffffff;
+        border: 1px solid rgba(26, 26, 26, 0.05);
+        border-radius: 28px;
+        padding: 3rem 2.5rem;
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 10px 40px rgba(26, 26, 26, 0.02);
+      }
+      .luxury-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 60px rgba(26, 26, 26, 0.06);
+        border-color: rgba(197, 168, 128, 0.25);
+      }
+      .luxury-card-dark {
+        background: #121212;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        border-radius: 28px;
+        padding: 3rem 2.5rem;
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      }
+      .luxury-card-dark:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+        border-color: rgba(197, 168, 128, 0.35);
+      }
+      .milestone-card {
+        background: #ffffff;
+        border: 1px solid rgba(26, 26, 26, 0.04);
+        border-radius: 24px;
+        padding: 2.5rem;
+        box-shadow: 0 8px 30px rgba(26, 26, 26, 0.015);
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .milestone-card:hover {
+        transform: translateY(-4px) scale(1.01);
+        border-color: rgba(197, 168, 128, 0.2);
+        box-shadow: 0 25px 50px rgba(26, 26, 26, 0.04);
+      }
+      
+      /* Initial scroll state for GSAP */
+      .animate-on-scroll {
+        opacity: 0;
+        will-change: transform, opacity;
+      }
     </style>
   </head>
   <body class="relative bg-alabaster text-charcoal antialiased">
@@ -558,89 +606,335 @@
               </div>
             </div>
 
-            <!-- Story Grid -->
-            <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-start mt-16">
-              <div>
-                <span class="label-text block mb-4">Engineering Standards</span>
-                <h3 class="editorial-h2 text-charcoal mb-6">Built to Outlast Generations</h3>
-                <p class="body-base text-charcoal/80 mb-6">
-                  At Rbchomes, our philosophy centers on engineering perfection. We construct signature villas and luxury flats using high-grade structural concrete and strict seismic-resistant architectural framing. Every structure is thoroughly audited by tier-1 structural engineers.
-                </p>
-                <p class="body-base text-charcoal/80">
-                  By integrating smart eco-technologies, rainwater harvesting systems, and solar grids directly into our concrete designs, we build landmarks that respect both Kerala's tropical environment and the investor's longevity requirements.
+            <!-- Story Grid (About Us & Commitment) -->
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-stretch mt-16 border-b border-charcoal/10 pb-16">
+              <div class="luxury-card animate-on-scroll">
+                <span class="label-text block mb-4">About Us</span>
+                <h3 class="editorial-h2 text-charcoal mb-6">Fourteen Years of Excellence</h3>
+                <p class="body-base text-charcoal/80 leading-relaxed">
+                  RBC Homes Pvt. Ltd. is a professionally managed real estate developer based in Thiruvananthapuram, Kerala, with over 14 years of experience in the industry. The company specializes in premium residential villa projects and has built a strong reputation for delivering quality homes through architectural excellence, transparent business practices, and customer-centric service. With multiple successful developments across prime locations in the city, RBC Homes is recognized as a trusted name in creating aesthetically appealing, durable, and value-driven living spaces.
                 </p>
               </div>
-              <div>
-                <span class="label-text block mb-4">Legal Assurances</span>
-                <h3 class="editorial-h2 text-charcoal mb-6">Absolute Peace of Mind</h3>
-                <p class="body-base text-charcoal/80 mb-6">
-                  Real estate investment represents legacy-building. Therefore, Rbchomes enforces an absolute transparency protocol. Every property carries full legal clearance, clear land titles, and strict adherence to RERA guidelines.
+              <div class="luxury-card animate-on-scroll">
+                <span class="label-text block mb-4">Commitment to Excellence</span>
+                <h3 class="editorial-h2 text-charcoal mb-6">Building Trust, Creating Landmarks</h3>
+                <p class="body-base text-charcoal/80 leading-relaxed">
+                  At RBC Homes Pvt. Ltd., we believe every home represents a dream and a lasting investment for families. Guided by trust, quality, and professionalism, we create thoughtfully designed living spaces that combine comfort, elegance, and enduring value. Through innovative and customer-focused developments, we continue to shape Thiruvananthapuram's residential landscape.
                 </p>
-                <p class="body-base text-charcoal/80">
-                  Our comprehensive legal binders and custom financial advisories ensure that ownership transitions are smooth, direct, and guarantee rapid asset appreciation within Trivandrum's premium real estate sectors.
+              </div>
+            </div>
+
+            <!-- Vision & Mission Grid -->
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-stretch mt-16 border-b border-charcoal/10 pb-16">
+              <div class="luxury-card animate-on-scroll">
+                <div class="flex items-center gap-3 mb-6">
+                  <!-- Eye/Vision icon -->
+                  <div class="p-3 bg-charcoal/5 rounded-full text-charcoal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </div>
+                  <span class="label-text">Our Vision</span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-serif text-charcoal mb-6 leading-snug">
+                  To become one of Kerala's most trusted and innovative real estate developers.
+                </h3>
+                <p class="body-base text-charcoal/80 leading-relaxed">
+                  By delivering premium residential communities that reflect quality, comfort, sustainability, and modern living, we elevate the architectural footprint of our region.
                 </p>
+              </div>
+              <div class="luxury-card animate-on-scroll">
+                <div class="flex items-center gap-3 mb-6">
+                  <!-- Target/Mission icon -->
+                  <div class="p-3 bg-charcoal/5 rounded-full text-charcoal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span class="label-text">Our Mission</span>
+                </div>
+                <ul class="space-y-4">
+                  <li class="flex items-start gap-3">
+                    <span class="text-[#c5a880] text-lg font-serif mt-0.5">•</span>
+                    <span class="body-base text-charcoal/80">To develop high-quality residential projects with uncompromising standards.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-[#c5a880] text-lg font-serif mt-0.5">•</span>
+                    <span class="body-base text-charcoal/80">To maintain transparency, integrity, and professionalism in every project.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-[#c5a880] text-lg font-serif mt-0.5">•</span>
+                    <span class="body-base text-charcoal/80">To provide excellent customer satisfaction through timely delivery and reliable service.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-[#c5a880] text-lg font-serif mt-0.5">•</span>
+                    <span class="body-base text-charcoal/80">To create sustainable and value-oriented living environments.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-[#c5a880] text-lg font-serif mt-0.5">•</span>
+                    <span class="body-base text-charcoal/80">To continuously innovate in design, planning, and construction practices.</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Pillars Section (Sticky Layout) -->
-        <section class="section-padding bg-alabaster process-section">
+        <!-- Why RBC & Strengths Section -->
+        <section class="section-padding bg-alabaster border-b border-charcoal/10">
           <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-16 md:gap-24">
-              <!-- LeftSticky -->
-              <div class="left-sticky md:sticky md:top-32 md:self-start">
-                <h2 class="editorial-h2 mb-8">
-                  <span class="text-charcoal">The Three Pillars</span>
-                  <br />
-                  <span class="text-cool-gray">of RBC.</span>
-                </h2>
-                <a href="booking.html" class="pill-button-dark group" data-hover="scale">
-                  Schedule Consultation
-                  <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
+              <!-- Left Side: Why RBC Homes? -->
+              <div class="animate-on-scroll">
+                <span class="label-text block mb-6">Why RBC Homes?</span>
+                <h2 class="editorial-h2 text-charcoal mb-8">Uncompromising Standards, Prime Locations</h2>
+                <ul class="space-y-4">
+                  <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-[#c5a880] flex items-center justify-center font-serif text-sm">01</div>
+                    <span class="body-base text-charcoal/80 mt-1">14+ Years of Trusted Experience</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-[#c5a880] flex items-center justify-center font-serif text-sm">02</div>
+                    <span class="body-base text-charcoal/80 mt-1">Successfully Completed Multiple Villa Communities</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-[#c5a880] flex items-center justify-center font-serif text-sm">03</div>
+                    <span class="body-base text-charcoal/80 mt-1">Strong Presence in Thiruvananthapuram Real Estate Sector</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-[#c5a880] flex items-center justify-center font-serif text-sm">04</div>
+                    <span class="body-base text-charcoal/80 mt-1">High-Quality Construction Standards</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-[#c5a880] flex items-center justify-center font-serif text-sm">05</div>
+                    <span class="body-base text-charcoal/80 mt-1">Transparent and Ethical Business Practices</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-[#c5a880] flex items-center justify-center font-serif text-sm">06</div>
+                    <span class="body-base text-charcoal/80 mt-1">Customer-Focused Approach</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-[#c5a880] flex items-center justify-center font-serif text-sm">07</div>
+                    <span class="body-base text-charcoal/80 mt-1">Modern Architectural Excellence</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-[#c5a880] flex items-center justify-center font-serif text-sm">08</div>
+                    <span class="body-base text-charcoal/80 mt-1">Timely Project Delivery</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-charcoal text-[#c5a880] flex items-center justify-center font-serif text-sm">09</div>
+                    <span class="body-base text-charcoal/80 mt-1">Prime Residential Locations</span>
+                  </li>
+                </ul>
               </div>
 
-              <!-- Right Steps (Pillars) -->
-              <div class="flex flex-col">
-                <span class="label-text mb-8">Pillars:</span>
-                <div class="space-y-0">
-                  <div class="step-item border-t border-charcoal/10 py-8 group">
-                    <div class="flex gap-6">
-                      <span class="text-cool-gray text-sm font-medium mt-1">01</span>
-                      <div>
-                        <h3 class="text-xl md:text-2xl font-normal mb-2 text-charcoal">
-                          <span class="font-medium">Architectural Masterclass.</span>
-                          <span class="text-cool-gray"> Melding tropical elegance with modern structural geometries.</span>
-                        </h3>
-                      </div>
+              <!-- Right Side: Our Strengths -->
+              <div class="animate-on-scroll">
+                <span class="label-text block mb-6">Our Strengths</span>
+                <h2 class="editorial-h2 text-charcoal mb-8">The Pillars of Our Success</h2>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="p-6 bg-white border border-charcoal/5 rounded-2xl flex flex-col justify-between h-40 shadow-sm hover:translate-y-[-4px] hover:border-[#c5a880]/30 hover:shadow-lg transition-all duration-300">
+                    <div class="w-10 h-10 rounded-full bg-charcoal/5 flex items-center justify-center text-charcoal">
+                      <!-- Pin/Location icon -->
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-charcoal text-xs uppercase tracking-wider">Strategic Locations</h4>
                     </div>
                   </div>
-                  <div class="step-item border-t border-charcoal/10 py-8 group">
-                    <div class="flex gap-6">
-                      <span class="text-cool-gray text-sm font-medium mt-1">02</span>
-                      <div>
-                        <h3 class="text-xl md:text-2xl font-normal mb-2 text-charcoal">
-                          <span class="font-medium">Engineering Supremacy.</span>
-                          <span class="text-cool-gray"> Utilizing premium steel, certified concrete mixes, and thorough quality audits.</span>
-                        </h3>
-                      </div>
+                  <div class="p-6 bg-white border border-charcoal/5 rounded-2xl flex flex-col justify-between h-40 shadow-sm hover:translate-y-[-4px] hover:border-[#c5a880]/30 hover:shadow-lg transition-all duration-300">
+                    <div class="w-10 h-10 rounded-full bg-charcoal/5 flex items-center justify-center text-charcoal">
+                      <!-- Construction/Quality icon -->
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-charcoal text-xs uppercase tracking-wider">Quality Construction</h4>
                     </div>
                   </div>
-                  <div class="step-item border-t border-charcoal/10 py-8 group">
-                    <div class="flex gap-6">
-                      <span class="text-cool-gray text-sm font-medium mt-1">03</span>
-                      <div>
-                        <h3 class="text-xl md:text-2xl font-normal mb-2 text-charcoal">
-                          <span class="font-medium">Absolute Legal Guarantees.</span>
-                          <span class="text-cool-gray"> Ensuring transparent title tracking, RERA approvals, and clear handovers.</span>
-                        </h3>
-                      </div>
+                  <div class="p-6 bg-white border border-charcoal/5 rounded-2xl flex flex-col justify-between h-40 shadow-sm hover:translate-y-[-4px] hover:border-[#c5a880]/30 hover:shadow-lg transition-all duration-300">
+                    <div class="w-10 h-10 rounded-full bg-charcoal/5 flex items-center justify-center text-charcoal">
+                      <!-- Team/People icon -->
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-charcoal text-xs uppercase tracking-wider">Experienced Team</h4>
                     </div>
                   </div>
+                  <div class="p-6 bg-white border border-charcoal/5 rounded-2xl flex flex-col justify-between h-40 shadow-sm hover:translate-y-[-4px] hover:border-[#c5a880]/30 hover:shadow-lg transition-all duration-300">
+                    <div class="w-10 h-10 rounded-full bg-charcoal/5 flex items-center justify-center text-charcoal">
+                      <!-- Satisfaction/Heart icon -->
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-charcoal text-xs uppercase tracking-wider">Customer Satisfaction</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Milestones Section -->
+        <section class="section-padding bg-alabaster border-b border-charcoal/10">
+          <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+              <span class="label-text block mb-4">Milestones</span>
+              <h2 class="editorial-h2 text-charcoal">Our History & Milestones</h2>
+            </div>
+            
+            <div class="relative border-l border-charcoal/10 ml-4 md:ml-32 py-8 space-y-12">
+              <!-- Milestone 1 -->
+              <div class="relative pl-8 md:pl-16 animate-on-scroll">
+                <!-- Dot marker -->
+                <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-white border-4 border-[#c5a880]"></div>
+                <!-- Card content -->
+                <div class="milestone-card max-w-4xl">
+                  <div class="flex flex-wrap justify-between items-baseline gap-2 mb-4">
+                    <span class="text-xs font-bold text-[#c5a880] tracking-widest uppercase">2012 – 2015</span>
+                    <h3 class="text-xl md:text-2xl font-serif text-charcoal font-medium">Luxury Traditional Villas</h3>
+                  </div>
+                  <div class="space-y-2 text-sm text-charcoal/80 leading-relaxed">
+                    <p class="font-medium">🏡 5 Premium Two-Storied Villas</p>
+                    <p>📍 Shankaran Nair Road, 2.5 km from Thirumala, Thiruvananthapuram</p>
+                    <p class="text-[#c5a880] font-semibold text-xs tracking-wider uppercase mt-4">Traditional Kerala Architecture • Premium Living • Spacious Designs</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Milestone 2 -->
+              <div class="relative pl-8 md:pl-16 animate-on-scroll">
+                <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-white border-4 border-charcoal"></div>
+                <div class="milestone-card max-w-4xl">
+                  <div class="flex flex-wrap justify-between items-baseline gap-2 mb-4">
+                    <span class="text-xs font-bold text-charcoal/60 tracking-widest uppercase">2015 – 2018</span>
+                    <h3 class="text-xl md:text-2xl font-serif text-charcoal font-medium">Contemporary Villa Community</h3>
+                  </div>
+                  <div class="space-y-2 text-sm text-charcoal/80 leading-relaxed">
+                    <p class="font-medium">🏡 12 Two-Storied Villas</p>
+                    <p>📍 Mangattukadavu, 2 km from Thirumala, Thiruvananthapuram</p>
+                    <p class="text-[#c5a880] font-semibold text-xs tracking-wider uppercase mt-4">Modern Architecture • Spacious Planning • Superior Construction</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Milestone 3 -->
+              <div class="relative pl-8 md:pl-16 animate-on-scroll">
+                <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-white border-4 border-[#c5a880]"></div>
+                <div class="milestone-card max-w-4xl">
+                  <div class="flex flex-wrap justify-between items-baseline gap-2 mb-4">
+                    <span class="text-xs font-bold text-[#c5a880] tracking-widest uppercase">2019 – 2023</span>
+                    <h3 class="text-xl md:text-2xl font-serif text-charcoal font-medium">Contemporary Budget Villas</h3>
+                  </div>
+                  <div class="space-y-2 text-sm text-charcoal/80 leading-relaxed">
+                    <p class="font-medium">🏡 25 Budget-Friendly Two-Storied Villas</p>
+                    <p>📍 Shankaran Nair Road, 2.5 km from Thirumala, Thiruvananthapuram</p>
+                    <p class="text-[#c5a880] font-semibold text-xs tracking-wider uppercase mt-4">Affordable Premium Living • Family-Oriented Community • Excellent Connectivity</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Milestone 4 -->
+              <div class="relative pl-8 md:pl-16 animate-on-scroll">
+                <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-white border-4 border-charcoal"></div>
+                <div class="milestone-card max-w-4xl">
+                  <div class="flex flex-wrap justify-between items-baseline gap-2 mb-4">
+                    <span class="text-xs font-bold text-charcoal/60 tracking-widest uppercase">2023 – 2025</span>
+                    <h3 class="text-xl md:text-2xl font-serif text-charcoal font-medium">Luxury Villa Development</h3>
+                  </div>
+                  <div class="space-y-2 text-sm text-charcoal/80 leading-relaxed">
+                    <p class="font-medium">🏡 36 Luxury Two-Storied Villas</p>
+                    <p>📍 Pottayil, 3 km from Thirumala, Thiruvananthapuram</p>
+                    <p class="text-[#c5a880] font-semibold text-xs tracking-wider uppercase mt-4">Modern Architecture • Spacious Interiors • Premium Amenities</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Current Projects Section -->
+        <section class="section-padding bg-alabaster border-b border-charcoal/10">
+          <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+              <span class="label-text block mb-4">Ongoing Developments</span>
+              <h2 class="editorial-h2 text-charcoal">Current Projects</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+              <!-- Current Project 1 -->
+              <div class="luxury-card-dark animate-on-scroll flex flex-col justify-between">
+                <div>
+                  <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-serif text-[#c5a880] font-medium mb-4">Budget-Friendly Single Storied Villas</h3>
+                  <p class="text-white/70 text-sm mb-6 leading-relaxed">
+                    Development of 19 single-storied budget villas located 3 km from Malayinkeezhu and 5 km from Balaramapuram Town, Thiruvananthapuram.
+                  </p>
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-2 text-sm text-white/80">
+                      <span class="text-[#c5a880]">•</span>
+                      <span>Affordable modern homes with functional single-floor layouts</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-white/80">
+                      <span class="text-[#c5a880]">•</span>
+                      <span>Peaceful residential environment with easy access to major town centers</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <a href="villas-ooruttambalam.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#c5a880] hover:text-white transition-colors" data-hover="scale">
+                    Explore Project
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Current Project 2 -->
+              <div class="luxury-card-dark animate-on-scroll flex flex-col justify-between">
+                <div>
+                  <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-serif text-[#c5a880] font-medium mb-4">Luxury Two Storied Villas</h3>
+                  <p class="text-white/70 text-sm mb-6 leading-relaxed">
+                    Development of 17 luxury two-storied villas located 3 km from Malayinkeezhu and 5 km from Balaramapuram Town, Thiruvananthapuram.
+                  </p>
+                  <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-2 text-sm text-white/80">
+                      <span class="text-[#c5a880]">•</span>
+                      <span>Premium luxury living spaces with spacious interiors and modern amenities</span>
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-white/80">
+                      <span class="text-[#c5a880]">•</span>
+                      <span>Contemporary architectural design in a strategically located residential community</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <a href="ooruttambalam.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#c5a880] hover:text-white transition-colors" data-hover="scale">
+                    Explore Project
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -719,7 +1013,7 @@
               </div>
               <div>
                 <span class="text-white/40 block mb-1">Email Us</span>
-                <a href="mailto:info@rbchomeskerala.com" class="text-white/80 hover:text-white transition-colors" data-hover="scale">info@rbchomeskerala.com</a>
+                <a href="mailto:rbc.homes26@gmail.com" class="text-white/80 hover:text-white transition-colors" data-hover="scale">rbc.homes26@gmail.com</a>
               </div>
               <div>
                 <span class="text-white/40 block mb-1">Call Us</span>
@@ -797,6 +1091,27 @@
               },
             }
           );
+        }
+
+        // GSAP ScrollTrigger for elements with class .animate-on-scroll
+        gsap.registerPlugin(ScrollTrigger);
+        const scrollElems = document.querySelectorAll('.animate-on-scroll');
+        scrollElems.forEach((elem) => {
+          gsap.fromTo(elem,
+            { y: 40, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.2,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: elem,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+              }
+            }
+          );
+        });
       });
     </script>
 
